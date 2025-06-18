@@ -1,40 +1,57 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class Sound : MonoBehaviour
 {
-    [SerializeField] private AudioMixerGroup _master;
-    [SerializeField] private AudioMixerGroup _backGround;
-    [SerializeField] private AudioMixerGroup _ui;
+    private const string MasterVolumeParam = "MasterVolume";
+    private const string BackgroundVolumeParam = "BackGroundVolume";
+    private const string UIVolumeParam = "UIVolume";
+    private const float LogarithmicScaleFactor = 20f;
+    private const float MinDecibels = -80;
 
-    private float _masterVolume;
-    private bool _enable;
+    [SerializeField] private Slider _masterVolumeSlider;
+    [SerializeField] private Slider _backgroundVolumeSlider;
+    [SerializeField] private Slider _uiVolumeSlider;
 
-    public void Mute(bool enable)
+    [SerializeField] private AudioMixerGroup _masterMixerGroup;
+    [SerializeField] private AudioMixerGroup _backgroundMixerGroup;
+    [SerializeField] private AudioMixerGroup _uiMixerGroup;
+
+    private void OnEnable()
     {
-        _enable = enable;
-
-        if (enable)
-            _master.audioMixer.SetFloat("MasterVolume", -80);
-        else
-            _master.audioMixer.SetFloat("MasterVolume", _masterVolume);
+        _masterVolumeSlider.onValueChanged.AddListener(ChangeMasterVolume);
+        _backgroundVolumeSlider.onValueChanged.AddListener(ChangeBackGroundVolume);
+        _uiVolumeSlider.onValueChanged.AddListener(ChangeUIVolume);
     }
 
-    public void ChangeMasterVolume(float volume)
+    private void OnDisable()
     {
-        _masterVolume = Mathf.Log10(volume) * 20;
-
-        if (_enable == false)
-            _master.audioMixer.SetFloat("MasterVolume", _masterVolume);
+        _masterVolumeSlider.onValueChanged.RemoveListener(ChangeMasterVolume);
+        _backgroundVolumeSlider.onValueChanged.RemoveListener(ChangeBackGroundVolume);
+        _uiVolumeSlider.onValueChanged.RemoveListener(ChangeUIVolume);
     }
 
-    public void ChangeBackGroundVolume(float volume)
+    private void ChangeMasterVolume(float volume)
     {
-        _master.audioMixer.SetFloat("BackGroundVolume", Mathf.Log10(volume) * 20);
+        _masterMixerGroup.audioMixer.SetFloat(MasterVolumeParam, ConvertToDecibels(volume));
     }
 
-    public void ChangeUIVolume(float volume)
+    private void ChangeBackGroundVolume(float volume)
     {
-        _master.audioMixer.SetFloat("UIVolume", Mathf.Log10(volume) * 20);
+        _masterMixerGroup.audioMixer.SetFloat(BackgroundVolumeParam, ConvertToDecibels(volume));
+    }
+
+    private void ChangeUIVolume(float volume)
+    {
+        _masterMixerGroup.audioMixer.SetFloat(UIVolumeParam, ConvertToDecibels(volume));
+    }
+
+    private float ConvertToDecibels(float volume)
+    {
+        if (volume == 0)
+            return Mathf.Log10(MinDecibels) * LogarithmicScaleFactor;
+
+        return Mathf.Log10(volume) * LogarithmicScaleFactor;
     }
 }

@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\i2016\\Menu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9AD45770-5278-734E-9CA4-7AC8ED7B383A}|Assembly-CSharp.csproj|c:\\users\\i2016\\menu\\assets\\scripts\\sound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9AD45770-5278-734E-9CA4-7AC8ED7B383A}|Assembly-CSharp.csproj|C:\\Users\\i2016\\Menu\\assets\\scripts\\sound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9AD45770-5278-734E-9CA4-7AC8ED7B383A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AD45770-5278-734E-9CA4-7AC8ED7B383A}|Assembly-CSharp.csproj|c:\\users\\i2016\\menu\\assets\\scripts\\mutesound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AD45770-5278-734E-9CA4-7AC8ED7B383A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\mutesound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9AD45770-5278-734E-9CA4-7AC8ED7B383A}|Assembly-CSharp.csproj|c:\\users\\i2016\\menu\\assets\\scripts\\soundsbuttons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9AD45770-5278-734E-9CA4-7AC8ED7B383A}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\soundsbuttons.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MuteSound.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\Menu\\Assets\\Scripts\\MuteSound.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MuteSound.cs",
+              "ToolTip": "C:\\Users\\i2016\\Menu\\Assets\\Scripts\\MuteSound.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MuteSound.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T14:39:48.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SoundsButtons.cs",
+              "DocumentMoniker": "C:\\Users\\i2016\\Menu\\Assets\\Scripts\\SoundsButtons.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SoundsButtons.cs",
+              "ToolTip": "C:\\Users\\i2016\\Menu\\Assets\\Scripts\\SoundsButtons.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SoundsButtons.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T11:53:37.837Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +58,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Sound.cs",
               "ToolTip": "C:\\Users\\i2016\\Menu\\Assets\\Scripts\\Sound.cs",
               "RelativeToolTip": "Assets\\Scripts\\Sound.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAqwBUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-17T16:14:17.514Z",
               "EditorCaption": ""

@@ -267,6 +267,8 @@ GameObject:
   m_Component:
   - component: {fileID: 52940302}
   - component: {fileID: 52940301}
+  - component: {fileID: 52940303}
+  - component: {fileID: 52940304}
   m_Layer: 0
   m_Name: Sound
   m_TagString: Untagged
@@ -286,9 +288,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6dab688b50d0c65458a24d1c45832c1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _master: {fileID: 24300002, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
-  _backGround: {fileID: 1647458929728095868, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
-  _ui: {fileID: -1469203682569372206, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
+  _masterVolumeSlider: {fileID: 1209857266}
+  _backgroundVolumeSlider: {fileID: 766091112}
+  _uiVolumeSlider: {fileID: 64662295}
+  _masterMixerGroup: {fileID: 24300002, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
+  _backgroundMixerGroup: {fileID: 1647458929728095868, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
+  _uiMixerGroup: {fileID: -1469203682569372206, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
 --- !u!4 &52940302
 Transform:
   m_ObjectHideFlags: 0
@@ -304,6 +309,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &52940303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52940300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb4728625b915440ab7a70ceb33ef29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpButton: {fileID: 1800336162}
+  _slashButton: {fileID: 1067280800}
+  _coinButton: {fileID: 1571905438}
+  _jumpAudioSource: {fileID: 2126399957}
+  _slashAudioSource: {fileID: 1988145090}
+  _coinAudioSource: {fileID: 1012182530}
+--- !u!114 &52940304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52940300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e31dd7b4698f99418d759f9ac14135c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioListener: {fileID: 1325233949}
+  _toggle: {fileID: 2117038605}
 --- !u!1 &64662293
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,19 +431,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 52940301}
-        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
-        m_MethodName: ChangeUIVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &87136267
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,7 +696,7 @@ GameObject:
   - component: {fileID: 194786078}
   - component: {fileID: 194786077}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: Sliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1092,19 +1117,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 52940301}
-        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
-        m_MethodName: ChangeBackGroundVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &850766371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,7 +1384,7 @@ GameObject:
   - component: {fileID: 989911927}
   - component: {fileID: 989911926}
   m_Layer: 5
-  m_Name: BattonPanel
+  m_Name: Battons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1892,19 +1905,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1067280801}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1988145090}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1067280801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2301,19 +2302,7 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 52940301}
-        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
-        m_MethodName: ChangeMasterVolume
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1238746059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2914,19 +2903,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1571905439}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1012182530}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1571905439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3334,19 +3311,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1800336163}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2126399957}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1800336163
 MonoBehaviour:
   m_ObjectHideFlags: 0
