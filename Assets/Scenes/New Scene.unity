@@ -257,90 +257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3330831}
   m_CullTransparentMesh: 1
---- !u!1 &52940300
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 52940302}
-  - component: {fileID: 52940301}
-  - component: {fileID: 52940303}
-  - component: {fileID: 52940304}
-  m_Layer: 0
-  m_Name: Sound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &52940301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52940300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dab688b50d0c65458a24d1c45832c1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _masterVolumeSlider: {fileID: 1209857266}
-  _backgroundVolumeSlider: {fileID: 766091112}
-  _uiVolumeSlider: {fileID: 64662295}
-  _masterMixerGroup: {fileID: 24300002, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
-  _backgroundMixerGroup: {fileID: 1647458929728095868, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
-  _uiMixerGroup: {fileID: -1469203682569372206, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
---- !u!4 &52940302
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52940300}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 290.326, y: 228.1416, z: -2.5524347}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &52940303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52940300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cb4728625b915440ab7a70ceb33ef29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _jumpButton: {fileID: 1800336162}
-  _slashButton: {fileID: 1067280800}
-  _coinButton: {fileID: 1571905438}
-  _jumpAudioSource: {fileID: 2126399957}
-  _slashAudioSource: {fileID: 1988145090}
-  _coinAudioSource: {fileID: 1012182530}
---- !u!114 &52940304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52940300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e31dd7b4698f99418d759f9ac14135c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioListener: {fileID: 1325233949}
-  _toggle: {fileID: 2117038605}
 --- !u!1 &64662293
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,6 +267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 64662294}
   - component: {fileID: 64662295}
+  - component: {fileID: 64662296}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -432,6 +349,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &64662296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 64662293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dab688b50d0c65458a24d1c45832c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mixerParams: 2
+  _slider: {fileID: 64662295}
+  _mixerGroup: {fileID: -1469203682569372206, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
 --- !u!1 &87136267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1037,6 +969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 766091111}
   - component: {fileID: 766091112}
+  - component: {fileID: 766091113}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1118,6 +1051,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &766091113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766091110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dab688b50d0c65458a24d1c45832c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mixerParams: 1
+  _slider: {fileID: 766091112}
+  _mixerGroup: {fileID: 1647458929728095868, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
 --- !u!1 &850766371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1835,6 +1783,7 @@ GameObject:
   - component: {fileID: 1067280802}
   - component: {fileID: 1067280801}
   - component: {fileID: 1067280800}
+  - component: {fileID: 1067280803}
   m_Layer: 5
   m_Name: Slash
   m_TagString: Untagged
@@ -1944,6 +1893,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1067280798}
   m_CullTransparentMesh: 1
+--- !u!114 &1067280803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067280798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb4728625b915440ab7a70ceb33ef29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1067280800}
+  _audioSource: {fileID: 1988145090}
 --- !u!1 &1151531230
 GameObject:
   m_ObjectHideFlags: 0
@@ -2222,6 +2185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1209857265}
   - component: {fileID: 1209857266}
+  - component: {fileID: 1209857267}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -2303,6 +2267,21 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1209857267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209857264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dab688b50d0c65458a24d1c45832c1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mixerParams: 0
+  _slider: {fileID: 1209857266}
+  _mixerGroup: {fileID: 24300002, guid: 8ae3ce3c4b522e545b9200e048deeef6, type: 2}
 --- !u!1 &1238746059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2833,6 +2812,7 @@ GameObject:
   - component: {fileID: 1571905440}
   - component: {fileID: 1571905439}
   - component: {fileID: 1571905438}
+  - component: {fileID: 1571905441}
   m_Layer: 5
   m_Name: Coin
   m_TagString: Untagged
@@ -2942,6 +2922,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1571905436}
   m_CullTransparentMesh: 1
+--- !u!114 &1571905441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571905436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb4728625b915440ab7a70ceb33ef29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1571905438}
+  _audioSource: {fileID: 1012182530}
 --- !u!1 &1597754999
 GameObject:
   m_ObjectHideFlags: 0
@@ -3241,6 +3235,7 @@ GameObject:
   - component: {fileID: 1800336164}
   - component: {fileID: 1800336163}
   - component: {fileID: 1800336162}
+  - component: {fileID: 1800336165}
   m_Layer: 5
   m_Name: Jump
   m_TagString: Untagged
@@ -3350,6 +3345,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1800336160}
   m_CullTransparentMesh: 1
+--- !u!114 &1800336165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800336160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cb4728625b915440ab7a70ceb33ef29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 1800336162}
+  _audioSource: {fileID: 2126399957}
 --- !u!1 &1839700022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3697,6 +3706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2117038604}
   - component: {fileID: 2117038605}
+  - component: {fileID: 2117038606}
   m_Layer: 5
   m_Name: Mute
   m_TagString: Untagged
@@ -3771,20 +3781,22 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 52940301}
-        m_TargetAssemblyTypeName: Sound, Assembly-CSharp
-        m_MethodName: Mute
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_IsOn: 0
+--- !u!114 &2117038606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117038603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e31dd7b4698f99418d759f9ac14135c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioListener: {fileID: 1325233949}
+  _toggle: {fileID: 2117038605}
 --- !u!1 &2125539451
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,4 +4011,3 @@ SceneRoots:
   - {fileID: 2126399958}
   - {fileID: 1988145091}
   - {fileID: 1012182531}
-  - {fileID: 52940302}
